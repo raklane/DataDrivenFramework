@@ -1,0 +1,5 @@
+com\rakesh\rough\TestProperties.class
+com\rakesh\utilities\ExcelReader.class
+com\rakesh\base\TestBase.class
+com\rakesh\testCases\AddCustomerTest.class
+com\rakesh\testCases\BankManagerLoginTest.class

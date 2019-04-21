@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Add customer test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.732">
+  <properties />
+  
+  
+            <testcase name="AddCustomer" time="0.732" classname="com.rakesh.testCases.AddCustomerTest" />
+      
+</testsuite>
