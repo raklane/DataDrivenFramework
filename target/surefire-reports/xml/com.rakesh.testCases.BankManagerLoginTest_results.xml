@@ -4,15 +4,17 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="3.120">
+           time="0.006">
   <properties />
-            <testcase name="loginAsBankManager" time="3.120" classname="com.rakesh.testCases.BankManagerLoginTest">
-                <failure type="java.lang.AssertionError"
-                  message="Login not executed successfully"
+            <testcase name="loginAsBankManager" time="0.006" classname="com.rakesh.testCases.BankManagerLoginTest">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
               >
-<![CDATA[java.lang.AssertionError: Login not executed successfully
-  org.testng.Assert.fail(Assert.java:93)
-  com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:26)
+<![CDATA[java.lang.NullPointerException
+  com.relevantcodes.extentreports.ExtentTest.isPathRelative(ExtentTest.java:502)
+  com.relevantcodes.extentreports.ExtentTest.addScreenCapture(ExtentTest.java:287)
+  com.rakesh.base.TestBase.verifyEquals(TestBase.java:162)
+  com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:16)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

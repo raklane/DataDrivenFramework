@@ -1,5 +1,10 @@
 com\rakesh\rough\TestProperties.class
+com\rakesh\testCases\OpenAccountTest.class
 com\rakesh\utilities\ExcelReader.class
 com\rakesh\base\TestBase.class
 com\rakesh\testCases\AddCustomerTest.class
+com\rakesh\utilities\ExtentManager.class
+com\rakesh\listeners\CustomListeners.class
 com\rakesh\testCases\BankManagerLoginTest.class
+com\rakesh\utilities\TestUtil.class
+com\rakesh\rough\TimeStampTest.class

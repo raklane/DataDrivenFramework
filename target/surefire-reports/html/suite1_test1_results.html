@@ -12,7 +12,7 @@
 <body>
 <h1>Bank Manager login test</h1>
 <p>
-  Test duration: 3.120s
+  Test duration: 0.006s
 </p>
 
 
@@ -28,22 +28,28 @@
                   loginAsBankManager
       </td>
   <td class="duration">
-    3.120s
+    0.006s
   </td>
   <td class="result">
         
     
             <div class="testOutput">
-                        <a target="_blank" href=Sun_Apr_21_18_07_55_CDT_2019>Screenshot</a>
+                        <br>Verification failed: expected [abc] but found [xyz]<br>
+                                <a target="_blank" href=null><img src=null height=200 width=200></img></a>
+                                <br>
+                                <br>
+                                <a target="_blank" href=Tue_Apr_23_13_28_22_CDT_2019>Screenshot</a>
                                 <br
-                                <a target="_blank" href=Sun_Apr_21_18_07_55_CDT_2019><img src=Sun_Apr_21_18_07_55_CDT_2019 height=200 width=200></img></a>
+                                <a target="_blank" href=Tue_Apr_23_13_28_22_CDT_2019><img src=Tue_Apr_23_13_28_22_CDT_2019 height=200 width=200></img></a>
                   </div>
     
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: Login not executed successfully</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException</b></a><br />
     <div class="stackTrace" id="exception-0">
-              org.testng.Assert.fail(Assert.java:93)<br />
-              com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:26)<br />
+              com.relevantcodes.extentreports.ExtentTest.isPathRelative(ExtentTest.java:502)<br />
+              com.relevantcodes.extentreports.ExtentTest.addScreenCapture(ExtentTest.java:287)<br />
+              com.rakesh.base.TestBase.verifyEquals(TestBase.java:162)<br />
+              com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:16)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />

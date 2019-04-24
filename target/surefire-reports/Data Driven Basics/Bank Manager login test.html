@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 21 18:07:52 CDT 2019</td>
+<td>Started on:</td><td>Tue Apr 23 13:28:22 CDT 2019</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3424 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (539 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,21 +76,30 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager()'><b>loginAsBankManager</b><br>Test class: com.rakesh.testCases.BankManagerLoginTest<br/>
-<a href="#Output-244185498" onClick='toggleBox("Output-244185498", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1003755748" onClick='toggleBox("Output-1003755748", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-244185498" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-244185498">
-<a target="_blank" href=Sun_Apr_21_18_07_55_CDT_2019>Screenshot</a><br/>
+<a href="#Output-1003755748" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1003755748">
+<br>Verification failed: expected [abc] but found [xyz]<br><br/>
+<a target="_blank" href=null><img src=null height=200 width=200></img></a><br/>
+<br><br/>
+<br><br/>
+<a target="_blank" href=Tue_Apr_23_13_28_22_CDT_2019>Screenshot</a><br/>
 <br<br/>
-<a target="_blank" href=Sun_Apr_21_18_07_55_CDT_2019><img src=Sun_Apr_21_18_07_55_CDT_2019 height=200 width=200></img></a><br/>
+<a target="_blank" href=Tue_Apr_23_13_28_22_CDT_2019><img src=Tue_Apr_23_13_28_22_CDT_2019 height=200 width=200></img></a><br/>
 </div>
 </td>
-<td><div><pre>java.lang.AssertionError: Login not executed successfully
-	at com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:26)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace244185498", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace244185498'><pre>java.lang.AssertionError: Login not executed successfully
-	at org.testng.Assert.fail(Assert.java:93)
-	at com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:26)
+<td><div><pre>java.lang.NullPointerException
+	at com.relevantcodes.extentreports.ExtentTest.isPathRelative(ExtentTest.java:502)
+	at com.relevantcodes.extentreports.ExtentTest.addScreenCapture(ExtentTest.java:287)
+	at com.rakesh.base.TestBase.verifyEquals(TestBase.java:162)
+	at com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:16)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1003755748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1003755748'><pre>java.lang.NullPointerException
+	at com.relevantcodes.extentreports.ExtentTest.isPathRelative(ExtentTest.java:502)
+	at com.relevantcodes.extentreports.ExtentTest.addScreenCapture(ExtentTest.java:287)
+	at com.rakesh.base.TestBase.verifyEquals(TestBase.java:162)
+	at com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:16)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -121,8 +130,8 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 </pre></div></td>
-<td>3</td>
-<td>com.rakesh.testCases.BankManagerLoginTest@8297b3a</td></tr>
+<td>0</td>
+<td>com.rakesh.testCases.BankManagerLoginTest@3b6ddd1d</td></tr>
 </table><p>
 </body>
 </html>

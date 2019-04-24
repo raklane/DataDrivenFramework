@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,24 +102,15 @@
                     <div class="method-list-content failed suite-Data_Driven_Basics">
                       <span>
                         <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Data_Driven_Basics" title="com.rakesh.testCases.AddCustomerTest" hash-for-method="addCustomerTest(manish, kumar, sfwr34d, Customer added successfully)">addCustomerTest(manish, kumar, sfwr34d, Customer added successfully)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Data_Driven_Basics" title="com.rakesh.testCases.BankManagerLoginTest" hash-for-method="loginAsBankManager">loginAsBankManager</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Data_Driven_Basics -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Data_Driven_Basics" class="hide-methods passed suite-Data_Driven_Basics"> (hide)</a> <!-- hide-methods passed suite-Data_Driven_Basics -->
-                      <a href="#" panel-name="suite-Data_Driven_Basics" class="show-methods passed suite-Data_Driven_Basics"> (show)</a> <!-- show-methods passed suite-Data_Driven_Basics -->
-                    </span>
-                    <div class="method-list-content passed suite-Data_Driven_Basics">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Data_Driven_Basics" title="com.rakesh.testCases.AddCustomerTest" hash-for-method="AddCustomer(manish, kumar, sfwr34d, Customer added successfully)">AddCustomer(manish, kumar, sfwr34d, Customer added successfully)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Data_Driven_Basics -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -142,30 +133,55 @@
                   <a name="loginAsBankManager">
                   </a> <!-- loginAsBankManager -->
                   <span class="method-name">loginAsBankManager</span>
-                  <div class="stack-trace">java.lang.AssertionError: Login not executed successfully
-	at com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:26)
-... Removed 30 stack frames
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.relevantcodes.extentreports.ExtentTest.isPathRelative(ExtentTest.java:502)
+	at com.relevantcodes.extentreports.ExtentTest.addScreenCapture(ExtentTest.java:287)
+	at com.rakesh.base.TestBase.verifyEquals(TestBase.java:162)
+	at com.rakesh.testCases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:16)
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Data_Driven_Basics-class-failed -->
-          <div class="suite-Data_Driven_Basics-class-passed">
+          <div class="suite-Data_Driven_Basics-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.rakesh.testCases.AddCustomerTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddCustomer(manish, kumar, sfwr34d, Customer added successfully)">
-                  </a> <!-- AddCustomer(manish, kumar, sfwr34d, Customer added successfully) -->
-                  <span class="method-name">AddCustomer</span>
+                  <a name="addCustomerTest(manish, kumar, sfwr34d, Customer added successfully)">
+                  </a> <!-- addCustomerTest(manish, kumar, sfwr34d, Customer added successfully) -->
+                  <span class="method-name">addCustomerTest</span>
                   <span class="parameters">(manish, kumar, sfwr34d, Customer added successfully)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;button[ng-click=&apos;addCust()&apos;]&quot;}
+  (Session info: chrome=73.0.3683.103)
+  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 10.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;RAKESHKUMAR&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:61832}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72), userDataDir=C:\Users\RAKESH~1.KUM\AppData\Local\Temp\scoped_dir4612_25818}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=73.0.3683.103, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: cc596db2dfdda55f3038ed296e3467bc
+*** Element info: {Using=css selector, value=button[ng-click=&apos;addCust()&apos;]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:492)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at com.rakesh.base.TestBase.click(TestBase.java:109)
+	at com.rakesh.testCases.AddCustomerTest.addCustomerTest(AddCustomerTest.java:20)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Data_Driven_Basics-class-passed -->
+          </div> <!-- suite-Data_Driven_Basics-class-failed -->
         </div> <!-- panel Data_Driven_Basics -->
         <div panel-name="test-xml-Data_Driven_Basics" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -233,18 +249,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginAsBankManager')
-data.setCell(0, 2, 'com.rakesh.testCases.BankManagerLoginTest')
-data.setCell(0, 3, 3120);
+data.setCell(0, 1, 'addCustomerTest')
+data.setCell(0, 2, 'com.rakesh.testCases.AddCustomerTest')
+data.setCell(0, 3, 10080);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'AddCustomer')
-data.setCell(1, 2, 'com.rakesh.testCases.AddCustomerTest')
-data.setCell(1, 3, 732);
+data.setCell(1, 1, 'loginAsBankManager')
+data.setCell(1, 2, 'com.rakesh.testCases.BankManagerLoginTest')
+data.setCell(1, 3, 6);
 window.suiteTableData['Data_Driven_Basics']= { tableData: data, tableDiv: 'times-div-Data_Driven_Basics'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Data_Driven_Basics">
               </div> <!-- times-div-Data_Driven_Basics -->
             </div> <!-- times-div -->
@@ -258,9 +274,21 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">loginAsBankManager</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output"><a target="_blank" href=Sun_Apr_21_18_07_55_CDT_2019>Screenshot</a></span>
+                <span class="reporter-method-output"><br>Verification failed: expected [abc] but found [xyz]<br></span>
+                <span class="reporter-method-output"><a target="_blank" href=null><img src=null height=200 width=200></img></a></span>
+                <span class="reporter-method-output"><br></span>
+                <span class="reporter-method-output"><br></span>
+                <span class="reporter-method-output"><a target="_blank" href=Tue_Apr_23_13_28_22_CDT_2019>Screenshot</a></span>
                 <span class="reporter-method-output"><br</span>
-                <span class="reporter-method-output"><a target="_blank" href=Sun_Apr_21_18_07_55_CDT_2019><img src=Sun_Apr_21_18_07_55_CDT_2019 height=200 width=200></img></a></span>
+                <span class="reporter-method-output"><a target="_blank" href=Tue_Apr_23_13_28_22_CDT_2019><img src=Tue_Apr_23_13_28_22_CDT_2019 height=200 width=200></img></a></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">addCustomerTest(manish, kumar, sfwr34d, Customer added successfully)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><a target="_blank" href=Tue_Apr_23_13_28_33_CDT_2019>Screenshot</a></span>
+                <span class="reporter-method-output"><br</span>
+                <span class="reporter-method-output"><a target="_blank" href=Tue_Apr_23_13_28_33_CDT_2019><img src=Tue_Apr_23_13_28_33_CDT_2019 height=200 width=200></img></a></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -290,18 +318,20 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">loginAsBankManager</span>
-                <span class="method-start">6259 ms</span>
+                <span class="method-start">6631 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.rakesh.testCases.AddCustomerTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">AddCustomer(manish, kumar, sfwr34d, Customer added successfully)</span>
-                <span class="method-start">9683 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">addCustomerTest(manish, kumar, sfwr34d, Customer added successfully)</span>
+                <span class="method-start">7188 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10421 ms</span>
+                <span class="method-start">17599 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

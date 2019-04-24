@@ -13,10 +13,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.rakesh.utilities.ExcelReader;
+import com.rakesh.utilities.ExtentManager;
+import com.rakesh.utilities.TestUtil;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class TestBase {
 	
@@ -39,6 +46,10 @@ public class TestBase {
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\testData.xlsx");
 	public static WebDriverWait wait;
+	
+	public static ExtentReports rep = ExtentManager.getInstance();
+	public static ExtentTest test;
+	
 	
 	//will be called before any test case
 	@BeforeSuite
@@ -91,6 +102,34 @@ public class TestBase {
 		wait = new WebDriverWait(driver, 10);
 	}
 	
+	
+	
+	public void click(String locator) {
+		if(locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+		}else if(locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).click();
+		}else if(locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).click();
+		}
+		
+		test.log(LogStatus.INFO, "Clicking on: " + locator);
+	}
+	
+	
+	
+	public void type(String locator, String value) {
+		if(locator.endsWith("_CSS")) {
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
+		}else if(locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
+		}else if(locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
+		}
+		
+		test.log(LogStatus.INFO, "Entering in: " + locator + ", Entered value: " + value);
+	}
+	
 	public boolean isElementPresent(By by) {
 		
 		try {
@@ -104,6 +143,25 @@ public class TestBase {
 			
 		}
 		
+	}
+	
+	
+	
+	public static void verifyEquals(String expected, String actual) {
+		
+		try {
+			Assert.assertEquals(actual, expected);
+		}catch(Throwable t) {
+			//ReportNG
+			Reporter.log("<br>" + "Verification failed: " + t.getMessage() + "<br>");
+			Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName + "><img src=" + TestUtil.screenshotName + " height=200 width=200></img></a>");
+			Reporter.log("<br>");
+			Reporter.log("<br>");
+			//Extent report
+			test.log(LogStatus.FAIL, "Verification failed: " +  t.getMessage());
+			test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+		}
+		log.info("verification failure methoh end");
 	}
 	
 	//will be called after every test cases

@@ -17,4 +17,15 @@
       </class> <!-- com.rakesh.testCases.BankManagerLoginTest -->
     </classes>
   </test> <!-- Bank Manager login test(failed) -->
+  <test name="Add customer test(failed)">
+    <classes>
+      <class name="com.rakesh.testCases.AddCustomerTest">
+        <methods>
+          <include name="addCustomerTest" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.rakesh.testCases.AddCustomerTest -->
+    </classes>
+  </test> <!-- Add customer test(failed) -->
 </suite> <!-- Failed suite [Data Driven Basics] -->
