@@ -1,4 +1,6 @@
-23/04/2019 13:28:16 devpinoyLogger Properties file loaded.
-23/04/2019 13:28:16 devpinoyLogger OR file loaded.
-23/04/2019 13:28:21 devpinoyLogger chrome launched with URL: http://www.way2automation.com/angularjs-protractor/banking/#/login
-23/04/2019 13:28:34 devpinoyLogger test exeuction completed.
+28/04/2019 17:09:15 devpinoyLogger Properties file loaded.
+28/04/2019 17:09:15 devpinoyLogger OR file loaded.
+28/04/2019 17:09:20 devpinoyLogger chrome launched with URL: http://www.way2automation.com/angularjs-protractor/banking/#/login
+28/04/2019 17:09:21 devpinoyLogger com.rakesh.testCases.BankManagerLoginTest test started.
+28/04/2019 17:09:24 devpinoyLogger com.rakesh.testCases.BankManagerLoginTest test finished.
+28/04/2019 17:09:42 devpinoyLogger test exeuction completed.

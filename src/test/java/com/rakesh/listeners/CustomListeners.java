@@ -6,6 +6,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.SkipException;
 
 import com.rakesh.base.TestBase;
 import com.rakesh.utilities.TestUtil;
@@ -53,13 +54,16 @@ public class CustomListeners extends TestBase implements ITestListener {
 
 	public void onTestSkipped(ITestResult arg0) {
 		// TODO Auto-generated method stub
+		test.log(LogStatus.SKIP, "Skipping the test " + arg0.getName().toUpperCase() + "as the run mode is No");
+		rep.endTest(test);
+		rep.flush();
 		
 	}
 
 	public void onTestStart(ITestResult arg0) {
 		// TODO Auto-generated method stub
 		test = rep.startTest(arg0.getName().toUpperCase());
-		
+				
 	}
 
 	public void onTestSuccess(ITestResult arg0) {

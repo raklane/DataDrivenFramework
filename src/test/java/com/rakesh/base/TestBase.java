@@ -12,6 +12,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -145,21 +146,40 @@ public class TestBase {
 		
 	}
 	
+	static Select dropdown;
+	
+	public static void select(String locator, String value) {
+		
+		if(locator.endsWith("_CSS")) {
+			dropdown = new Select(driver.findElement(By.cssSelector(OR.getProperty(locator))));
+		}else if(locator.endsWith("_XPATH")) {
+			dropdown = new Select(driver.findElement(By.xpath(OR.getProperty(locator))));
+		}else if(locator.endsWith("_ID")) {
+			dropdown = new Select(driver.findElement(By.id(OR.getProperty(locator))));
+		}
+		
+		dropdown.selectByVisibleText(value);
+		test.log(LogStatus.INFO, "Selecting from dropdown: " + locator + ", Selected value: " + value);
+		
+	}
 	
 	
-	public static void verifyEquals(String expected, String actual) {
+	
+	public static void verifyEquals(String expected, String actual) throws IOException {
 		
 		try {
 			Assert.assertEquals(actual, expected);
 		}catch(Throwable t) {
+			TestUtil.captureScreenshot();
 			//ReportNG
 			Reporter.log("<br>" + "Verification failed: " + t.getMessage() + "<br>");
 			Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName + "><img src=" + TestUtil.screenshotName + " height=200 width=200></img></a>");
 			Reporter.log("<br>");
 			Reporter.log("<br>");
 			//Extent report
-			test.log(LogStatus.FAIL, "Verification failed: " +  t.getMessage());
+			test.log(LogStatus.FAIL, "Verification failed___: " +  t.getMessage());
 			test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+			
 		}
 		log.info("verification failure methoh end");
 	}

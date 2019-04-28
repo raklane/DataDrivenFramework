@@ -16,4 +16,9 @@
 			<class name="com.rakesh.testCases.AddCustomerTest" />
 		</classes>
 	</test> <!-- Test -->
+	<test name="Open Account test">
+		<classes>
+			<class name="com.rakesh.testCases.OpenAccountTest" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->

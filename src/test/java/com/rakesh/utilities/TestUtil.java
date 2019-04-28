@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.Hashtable;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -11,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.DataProvider;
 
 import com.rakesh.base.TestBase;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class TestUtil extends TestBase {
 	
@@ -32,20 +34,46 @@ public class TestUtil extends TestBase {
 	public Object[][] getData(Method m){
 		
 		String sheetName = m.getName();
+		
 		int rowCount = excel.getRowCount(sheetName);
 		int colCount = excel.getColumnCount(sheetName);
 		
 		
-		Object[][] data = new Object[rowCount-1][colCount];
+		Object[][] data = new Object[rowCount-1][1];
+		
+		Hashtable<String, String> table = null;
 		
 		
 		for(int rowNum = 2; rowNum<=rowCount; rowNum++) {
+			
+			table = new Hashtable<String, String>();
 			for(int colNum = 0; colNum<colCount; colNum++) {
-				data[rowNum-2][colNum] = excel.getCellData(sheetName, colNum, rowNum);
+				
+				table.put(excel.getCellData(sheetName, colNum, 1), excel.getCellData(sheetName, colNum, rowNum));
+				data[rowNum-2][0] = table;
 			}
 		}
 		
 		return data;
+	}
+	
+	public static boolean isTestRunnable(String testName, ExcelReader excel) {
+		
+		String sheetName = "test_suite";
+		int rowCount = excel.getRowCount(sheetName);
+		String testCaseName;
+		
+		for(int i=2; i<=rowCount; i++) {
+			testCaseName = excel.getCellData(sheetName, "TCID", i);
+			if(testCaseName.equalsIgnoreCase(testName)) {
+				if(excel.getCellData(sheetName, "runMode", i).equalsIgnoreCase("Y"))
+					return true;
+				else
+					return false;
+			}
+		}
+		
+		return false;
 	}
 	
 }
