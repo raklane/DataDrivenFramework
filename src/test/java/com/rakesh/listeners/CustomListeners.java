@@ -1,7 +1,14 @@
 package com.rakesh.listeners;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -9,10 +16,14 @@ import org.testng.Reporter;
 import org.testng.SkipException;
 
 import com.rakesh.base.TestBase;
+import com.rakesh.utilities.MonitoringMail;
+import com.rakesh.utilities.TestConfig;
 import com.rakesh.utilities.TestUtil;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class CustomListeners extends TestBase implements ITestListener {
+public class CustomListeners extends TestBase implements ITestListener, ISuiteListener {
+	
+	static String message;
 
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub
@@ -71,6 +82,34 @@ public class CustomListeners extends TestBase implements ITestListener {
 		test.log(LogStatus.PASS , arg0.getName().toUpperCase() + " PASS");
 		rep.endTest(test);
 		rep.flush();
+		
+	}
+
+	@Override
+	public void onFinish(ISuite arg0) {
+		// TODO Auto-generated method stub
+		MonitoringMail mail = new MonitoringMail();
+		try {
+			message = InetAddress.getLocalHost().getHostAddress() + ":8080/job/DataDrivenProject28Apr/Extent_20Report/extent.html";
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			mail.sendMail(TestConfig.server, TestConfig.from, TestConfig.to, TestConfig.subject, message);
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void onStart(ISuite arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 	

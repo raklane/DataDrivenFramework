@@ -4,15 +4,15 @@
            failures="0"
            errors="0"
            skipped="1"
-           time="8.124">
+           time="7.901">
   <properties />
   
             <testcase name="addCustomerTest" time="0.0" classname="com.rakesh.testCases.AddCustomerTest">
           <skipped />
     </testcase>
   
-            <testcase name="addCustomerTest" time="2.497" classname="com.rakesh.testCases.AddCustomerTest" />
-                <testcase name="addCustomerTest" time="2.554" classname="com.rakesh.testCases.AddCustomerTest" />
-                <testcase name="addCustomerTest" time="3.072" classname="com.rakesh.testCases.AddCustomerTest" />
+            <testcase name="addCustomerTest" time="2.966" classname="com.rakesh.testCases.AddCustomerTest" />
+                <testcase name="addCustomerTest" time="2.426" classname="com.rakesh.testCases.AddCustomerTest" />
+                <testcase name="addCustomerTest" time="2.508" classname="com.rakesh.testCases.AddCustomerTest" />
       
 </testsuite>

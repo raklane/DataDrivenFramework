@@ -1,10 +1,15 @@
 com\rakesh\rough\TestProperties.class
 com\rakesh\testCases\OpenAccountTest.class
+com\rakesh\utilities\MonitoringMail$1.class
+com\rakesh\utilities\MonitoringMail.class
 com\rakesh\utilities\ExcelReader.class
 com\rakesh\base\TestBase.class
+com\rakesh\utilities\MonitoringMail$SMTPAuthenticator.class
 com\rakesh\testCases\AddCustomerTest.class
 com\rakesh\utilities\ExtentManager.class
 com\rakesh\listeners\CustomListeners.class
-com\rakesh\testCases\BankManagerLoginTest.class
 com\rakesh\utilities\TestUtil.class
+com\rakesh\utilities\TestConfig.class
+com\rakesh\rough\LocalHostAddr.class
+com\rakesh\testCases\BankManagerLoginTest.class
 com\rakesh\rough\TimeStampTest.class

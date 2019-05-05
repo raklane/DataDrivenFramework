@@ -50,6 +50,7 @@ public class TestBase {
 	
 	public static ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest test;
+	public static String browser;
 	
 	
 	//will be called before any test case
@@ -82,6 +83,13 @@ public class TestBase {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		
+		if(System.getenv("browser") != null && !System.getenv("browser").isEmpty()) {
+			browser = System.getenv("browser");
+			config.setProperty("browser", browser);
+		}else {
+			browser = System.getenv("browser");
 		}
 		
 		if(config.getProperty("browser").equalsIgnoreCase("chrome")) {
